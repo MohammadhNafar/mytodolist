@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./bootstrap.min.css">
+    <style>
+        .done {
+            text-decoration: line-through;
+        }
+
+        body {
+            font-family: "Open Sans", sans-serif;
+            line-height: 1.6;
+        }
+
+        .add-todo-input,
+        .edit-todo-input {
+            outline: none;
+        }
+
+        .add-todo-input:focus,
+        .edit-todo-input:focus {
+            border: none !important;
+            box-shadow: none !important;
+        }
+    </style>
+</head>
+
+<body >
+
+    
+
+    <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+        <div id="myToast" class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+              <div class="toast-body">
+                Todo was succesfully added
+              </div>
+
+              <button onclick="closetst()" id="closeToast" type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+          </div>
+          <div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+
+            <div id="deleteToast" class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                  <div class="toast-body">
+                    Todo was succesfully removed
+                  </div>
+                  <button onclick="closeDelete()" id="closeToast" type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+              </div>
+
+        <!-- App title section -->
+        <div class="row m-1 p-4">
+            <div class="col">
+                <div class="p-1 h1 text-primary text-center mx-auto display-inline-block">
+                    <i class="fa fa-check bg-primary text-white rounded p-2"></i>
+                    <u>My Todo-s</u>
+                </div>
+            </div>
+        </div>
+        <!-- Create todo section -->
+        <div class="row m-1 p-3">
+            <div class="col col-11 mx-auto">
+                <div
+                    class="row bg-white rounded shadow-sm p-2 add-todo-wrapper align-items-center justify-content-center">
+                    <div class="col">
+                        <input id="input-title" 
+                            class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded p-4 mt-2"
+                            type="text" placeholder="title...">
+                            <hr>
+                            <input id="input-dec" 
+                            class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded p-4 mt-2"
+                            type="text" placeholder="description...">
+                            <hr>
+                            <input id="input-date" 
+                            class="form-control form-control-lg border-0 add-todo-input bg-transparent rounded p-4 mt-2"
+                            type="date" placeholder="date...">
+                        <input type="hidden" id="edit-index">
+                    </div>
+
+                    <div class="col-auto px-0 mx-0 mr-2 d-flex justify-content-between">
+                        <div class="mx-1">
+                            <button id="add-btn" onclick="addValue()" type="button" class="btn btn-primary">Add</button>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div class="p-2 my-5 border-black-25 border-bottom"></div>
+                <ul id="todo-list">
+                    <li class="d-flex justify-content-between">
+                        <input type="checkbox">
+                        <div></div>
+                        <div>
+                            <button>Edit</button>
+                            <button>Delete</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div id="myToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="toast-header">
+          
+          <strong class="me-auto">Bootstrap</strong>
+          <small>succes</small>
+          <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+        <div class="toast-body">
+          Todo was added succesfully
+        </div>
+      </div> -->
+
+      
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
